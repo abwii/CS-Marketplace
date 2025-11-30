@@ -1,0 +1,19 @@
+<div class="market-container">
+    <h2>Marketplace</h2>
+    <div *ngIf="message" class="message">{{ message }}</div>
+
+    <div class="items-grid">
+        <div *ngFor="let item of items" class="item-card">
+            <img [src]="item.skin.image" alt="{{ item.skin.name }}">
+            <div class="item-info">
+                <h3>{{ item.skin.name }}</h3>
+                <p class="rarity" [style.color]="item.skin.rarity_color">{{ item.skin.rarity }}</p>
+                <p>Float: {{ item.skin.float | number:'1.2-5' }}</p>
+                <p>Price: ${{ item.price | number:'1.2-2' }}</p>
+                <p>Seller: {{ item.seller.username }}</p>
+                <button *ngIf="authService.user$ | async" (click)="buy(item._id)">Buy</button>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="items.length === 0">No items for sale.</div>
+</div>

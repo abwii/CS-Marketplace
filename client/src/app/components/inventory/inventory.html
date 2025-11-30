@@ -1,0 +1,20 @@
+<div class="inventory-container">
+    <div class="header">
+        <h2>My Inventory</h2>
+        <button class="add-btn" (click)="addRandomSkin()">Open Case (Demo)</button>
+    </div>
+    <div *ngIf="message" class="message">{{ message }}</div>
+
+    <div class="items-grid">
+        <div *ngFor="let item of inventory" class="item-card">
+            <img [src]="item.image" alt="{{ item.name }}">
+            <div class="item-info">
+                <h3>{{ item.name }}</h3>
+                <p class="rarity" [style.color]="item.rarity_color">{{ item.rarity }}</p>
+                <p>Float: {{ item.float | number:'1.2-5' }}</p>
+                <button (click)="sell(item.id)">Sell</button>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="inventory.length === 0">Inventory is empty.</div>
+</div>

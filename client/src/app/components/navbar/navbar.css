@@ -1,0 +1,39 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #1e1e1e;
+  color: white;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.links a {
+  color: white;
+  text-decoration: none;
+  margin-left: 1rem;
+}
+
+.links button {
+  margin-left: 1rem;
+  background: #d32f2f;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.balance {
+  margin-left: 1rem;
+  color: #4caf50;
+  font-weight: bold;
+}
+
+.username {
+  margin-left: 1rem;
+  color: #aaa;
+}
